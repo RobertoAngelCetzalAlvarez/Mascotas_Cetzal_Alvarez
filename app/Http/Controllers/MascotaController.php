@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Mascota;
+use app\model\Mascota;
 
 class MascotaController extends Controller
 {
@@ -14,17 +14,7 @@ class MascotaController extends Controller
      */
     public function index()
     {
-        return $mascotas=Mascota::all();
-    }
- 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return $mascota=Mascota::all();
     }
 
     /**
