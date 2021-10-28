@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::apiResource('apiMascota','MascotaController');
+    return view('login');
+}); 
+Route::Resource('apiMascota','MascotaController');
+
+Route::post('validar','AccesoController@validar');
