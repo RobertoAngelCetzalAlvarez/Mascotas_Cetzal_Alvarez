@@ -12,9 +12,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>@yield('titulo')</title>
 
   <!-- Font Awesome Icons -->
+  <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
 
   <link rel="stylesheet" href="css/all.min.css">
-
+  
   <!-- Theme style -->
   <link rel="stylesheet" href="css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -31,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="index3.html" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -234,6 +235,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <div class="content">
       <div class="container-fluid">
+        <!--inicio row-->
+        
+        <!-- /.row -->
         @yield('contenido')
       </div><!-- /.container-fluid -->
     </div>
@@ -273,5 +277,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src=" js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="js/adminlte.min.js"></script>
+
+@stack('scripts')
+
+
 </body>
 </html>

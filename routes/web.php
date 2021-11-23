@@ -14,13 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 }); 
 
-Route::post('validar','AccesoController@validar');
+
 
 Route::apiResource('apiMascota','MascotaController');
 Route::apiResource('apiEspecie','EspecieController');
 Route::apiResource('apiPropietario','PropietarioController');
 
 Route::view('mascotas','mascotas');
+
+Route::get('prueba', function(){
+    //return base64_encode('HOLA');
+    return DB::select("SELECT * FROM usuarios");
+});
+
+Route::get('Desencriptar', function(){
+    return base64_decode('SE9MQQ==');
+});
+Route::post('validar','AccesoController@validar');
+Route::view('especies','especies');
+Route::view('main','main');
+Route::view('propietarios','propietarios');
+
+Route::get('getRazas/{id_especie}', [
+    'as'=> 'getRazas',
+    'uses'=> 'EspecieController@getRazas',
+]);

@@ -27,6 +27,16 @@ class MascotaController extends Controller
     public function store(Request $request)
     {
         //
+        $mascota=new Mascota();
+
+        //$mascota->id_mascota=$request->get('id_mascota');
+        $mascota->nombre=$request->get('nombre');
+        $mascota->genero=$request->get('genero');
+        $mascota->peso=$request->get('peso');
+        $mascota->edad=$request->get('edad');
+        $mascota->id_especie=$request->get('id_especie');
+
+        $mascota->save();
     }
 
     /**
@@ -62,6 +72,17 @@ class MascotaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $mascota=Mascota::find($id);
+
+        $mascota->nombre=$request->get('nombre');
+        $mascota->edad=$request->get('edad');
+        $mascota->peso=$request->get('peso');
+        $mascota->genero=$request->get('genero');
+
+
+        $mascota->update();
+
+
     }
 
     /**
@@ -73,5 +94,12 @@ class MascotaController extends Controller
     public function destroy($id)
     {
         //
+        $mascota=Mascota::find($id);
+
+        $mascota->delete();
+
     }
+     public function obtenerMascotas(){
+            return 'HOLA MUNDO';
+        }
 }

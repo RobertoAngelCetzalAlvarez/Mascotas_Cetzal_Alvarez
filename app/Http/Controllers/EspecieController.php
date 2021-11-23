@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Especie;
-
+use DB;
 class EspecieController extends Controller
 {
     /**
@@ -61,5 +61,11 @@ class EspecieController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getRazas($id_especie){
+        $razas=DB::SELECT("SELECT * FROM razas WHERE id_especie=$id_especie");
+        
+        return $razas;
     }
 }
