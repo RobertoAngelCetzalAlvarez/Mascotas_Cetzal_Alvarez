@@ -12,8 +12,11 @@
 			<h5>TOTAL: @{{total}} </h5>
 		</div>
 	</div>-->
-
-
+<div class="row">
+	<div class="col-md-8" >
+			<input type="text" class="form-control" placeholder="Escriba el nombre de la mascota" v-model="buscar">
+	</div>
+</div>
 
 	<div class="row">
 		<div class="col-md-12">
@@ -44,7 +47,7 @@
 						<th>ACCIONES</th>
 					</thead>
 					<tbody>
-						 <tr v-for="mascota in mascotas">
+						 <tr v-for="mascota in filtroMascotas">
 						 	<td hidden="">@{{mascota.id_mascota}}</td>
 						 	<td>@{{mascota.nombre}}</td>
 						 	<td>@{{mascota.genero}}</td>

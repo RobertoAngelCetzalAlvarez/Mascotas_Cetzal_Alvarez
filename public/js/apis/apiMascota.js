@@ -20,6 +20,7 @@ function init() {
 
 			cantidad:1,
 			precio:0,
+			buscar:'',
 		},
 
 		//se ejecuta automaticamente cuando la pagina se crea
@@ -145,6 +146,14 @@ function init() {
 			total:function(){
 				return this.cantidad * this.precio;
 
+			},
+			filtroMascotas:function(){
+				return this.mascotas.filter((mascota)=>{
+					return mascota.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) //||
+					//hay algo mal aqui ya que cuando lo pongo desaparece toda la informacion en el navegador
+						//return mascota.especie.especie.toLowerCase().match(this.buscar.toLowerCase().trim())
+
+				});
 			},
 
 		},
