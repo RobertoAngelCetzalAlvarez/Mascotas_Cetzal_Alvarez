@@ -19,7 +19,7 @@ class Mascota extends Model
 
     //activar o desactivar etiquetas de tiempo
     // Lista de campos que van a recibir valor
-    public $timestamps=true;
+    public $timestamps=false;
 
     public $fillable=[
         'nombre',

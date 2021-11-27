@@ -53,7 +53,7 @@
 						 	<td>@{{mascota.genero}}</td>
 						 	<td>@{{mascota.peso}}</td>
 						 	<td>@{{mascota.edad}}</td>
-						 	<td>@{{mascota.especie}}</td>
+						 	<td>@{{mascota.especie.especie}}</td>
 
 						 	<td>
 						 		<button class="btn btn-sm" @click="editandoMascota(mascota.id_mascota)">

@@ -2,6 +2,13 @@ function init() {
 	var apiMascota='http://localhost/Mascotas_Cetzal_Alvarez/public/apiMascota';
 	var apiEspecie='http://localhost/Mascotas_Cetzal_Alvarez/public/apiEspecie';
 	new Vue({
+		
+		http: {
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('#token').getAttribute('value')
+            }
+        },
+
 		el:"#mascota",
 
 		data:{
@@ -131,8 +138,8 @@ function init() {
 			},
 			obtenerRazas(e){
 				var id_especie=e.target.value;
-				//console.log(id_especie);
-				this.$http.get(apiEspecie + '/getRazas/' + id_especie).then(function(j){
+				console.log(id_especie);
+				this.$http.get('http://localhost/Mascotas_Cetzal_Alvarez/public/getRazas/' + id_especie).then(function(j){
 					this.razas=j.data;
 					console.log(j.data);
 				});
@@ -149,9 +156,9 @@ function init() {
 			},
 			filtroMascotas:function(){
 				return this.mascotas.filter((mascota)=>{
-					return mascota.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) //||
+					return mascota.nombre.toLowerCase().match(this.buscar.toLowerCase().trim()) ||
 					//hay algo mal aqui ya que cuando lo pongo desaparece toda la informacion en el navegador
-						//return mascota.especie.especie.toLowerCase().match(this.buscar.toLowerCase().trim())
+						mascota.especie.especie.toLowerCase().match(this.buscar.toLowerCase().trim())
 
 				});
 			},

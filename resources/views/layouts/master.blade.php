@@ -13,6 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Font Awesome Icons -->
   <script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
+  <meta name="token" id="token" value="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="css/all.min.css">
   
