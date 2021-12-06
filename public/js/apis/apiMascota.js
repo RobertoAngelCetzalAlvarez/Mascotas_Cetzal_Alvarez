@@ -1,6 +1,7 @@
 function init() {	
 	var apiMascota='http://localhost/Mascotas_Cetzal_Alvarez/public/apiMascota';
 	var apiEspecie='http://localhost/Mascotas_Cetzal_Alvarez/public/apiEspecie';
+	var raza='http://localhost/Mascotas_Cetzal_Alvarez/public/getRazas/';
 	new Vue({
 		
 		http: {
@@ -139,7 +140,7 @@ function init() {
 			obtenerRazas(e){
 				var id_especie=e.target.value;
 				console.log(id_especie);
-				this.$http.get('http://localhost/Mascotas_Cetzal_Alvarez/public/getRazas/' + id_especie).then(function(j){
+				this.$http.get(raza + id_especie).then(function(j){
 					this.razas=j.data;
 					console.log(j.data);
 				});
