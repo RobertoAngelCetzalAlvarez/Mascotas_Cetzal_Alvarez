@@ -1,34 +1,29 @@
 function init() {
-	var apiEspecie='http://localhost/Mascotas_Cetzal_Alvarez/public/apiEspecie';
+	var apiProducto='http://localhost/Mascotas_Cetzal_Alvarez/public/apiProducto';// se crea para tener acceso global
 
 	new Vue({
-		el:'#apiEspecies',
+		el:'#apiVenta',
 
 		data:{
 	      mensaje:'HOLA MUNDO CRUEL',
-	      especies:[],
+	      sku:'',
 		},
 		//se ejecuta automaticamente cuando la pagina se crea
 		created:function(){
-			this.getEspecies();
+			
+
 		},
 		// INICIO DE METHODS
 		methods:{
 			//Obtiene el listado de todas las especies
 			getEspecies:function(){
-				this.$http.get(apiEspecie).then(function(j){
-					this.especies=j.data;
-				}).catch(function(j){
-				console.log(j); 
-			});
-			}
-
+				},
 		},
+
 		//FIN DE METHODS
 		computed:{
-
-
+			//
 		},
 
-	})
+	});
 } window.onload = init;
